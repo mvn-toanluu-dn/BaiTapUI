@@ -1,0 +1,49 @@
+.is-hidden {
+  display: none;
+}
+.section-title {
+  color: #333;
+  font-size: 40px;
+  line-height: 54px;
+  font-weight: 700;
+}
+.section-sub-title {
+  font-size: 14px;
+  color: map-get($colors, primary);
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.title-blue {
+  color: map-get($colors, primary);
+}
+.author-text {
+  margin-right: 30px;
+  .name {
+    font-weight: 700;
+    font-size: 18px;
+    color: map-get($colors, txt-black);
+    line-height: 1.5;
+  }
+  .designation {
+    font-weight: 400;
+    font-size: 14px;
+    color: #4c4d56;
+    line-height: 1.75;
+  }
+}
+.section-padding {
+  padding: 145px 0;
+}
+.item-menu {
+  display: inline-block;
+  padding: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+  // &:hover {
+  //   color: map-get($colors, primary);
+  // }
+}
