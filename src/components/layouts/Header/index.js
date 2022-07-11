@@ -7,8 +7,8 @@ export default function Header() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
-        document.scrollingElement.scrollTop > 80 ||
-        document.body.scrollTop > 80
+        document.scrollingElement.scrollTop >= 80 ||
+        document.body.scrollTop >= 80
       ) {
         headerRef.current.classList.add("shink");
       } else {

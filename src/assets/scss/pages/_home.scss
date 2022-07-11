@@ -1,8 +1,12 @@
 .page-home {
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 145px;
   .section-hero {
     background: url("../../images/hero-4-bg.jpg") no-repeat center / cover;
     height: map-get($heights, hero-height);
+    position: relative;
     .section-img {
       position: relative;
       padding-top: 50px;
@@ -34,7 +38,9 @@
     .section-content {
       padding-top: 20px;
       // margin-left: 50px;
+      // position: relative;
       .sub-title {
+        display: inline-block;
         font-size: 14px;
         font-weight: 800;
         text-transform: uppercase;
@@ -46,32 +52,23 @@
         letter-spacing: 1px;
         margin-bottom: 10px;
         opacity: 1;
-        position: absolute;
-        top: 40%;
-        transform: translateY(25%);
+        margin-top: 20%;
       }
       .title {
-        font-size: 65px;
-        line-height: 90px;
-        top: 70%;
+        font-size: 72px;
+        line-height: 92px;
         color: #fff;
-        transform: translateY(-70%);
-        position: absolute;
         font-weight: 700;
       }
       .intro {
-        position: absolute;
         font-size: 18px;
         line-height: 30px;
         font-weight: 600;
         color: #fff;
-        margin-top: 25px;
-        top: 80%;
-        transform: translateY(0%);
+        margin-top: 5%;
       }
       .btn {
-        position: absolute;
-        bottom: -50px;
+        margin-top: 12%;
         color: white;
         // &:hover {
         //   color: map-get($colors, primary);
@@ -593,63 +590,65 @@
       }
     }
   }
-  .section-form {
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
+}
+.section-form {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 400px;
+  top: 100%;
+  transform: translateY(-50%);
+  width: 100%;
+  .form {
+    flex-direction: column;
+    justify-content: center;
     height: 400px;
-    .form {
-      height: 400px;
-      background: url("../../images/subscribe-bg.jpg") no-repeat center / cover;
-      padding: 0 50px;
-      border-radius: 10px;
-      align-items: center;
-      position: absolute;
-      // top: 50%;
-      // z-index: 1100;
-      &-content {
-        text-align: center;
-        margin-bottom: 40px;
+    background: url("../../images/subscribe-bg.jpg") no-repeat center / cover;
+    padding: 0 50px;
+    border-radius: 10px;
+    margin: 0 10px;
+    &-content {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    &-sub {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      &-input {
+        height: 60px;
+        border: none;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
       }
-      &-sub {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        &-input {
-          height: 60px;
-          border: none;
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
-        }
-        ::placeholder {
-          font-size: 18px;
-          color: #99a6a7;
-          font-weight: 400;
-        }
-        input:not([type="submit"]:focus) {
-          background: map-get($colors, white);
-          color: #415674;
-          outline: none;
-          padding: 10px 25px;
-          font-weight: 600;
-        }
-        .btn-subscribe {
-          height: 60px;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          font-size: 16px;
-          font-weight: 700;
-        }
+      ::placeholder {
+        font-size: 18px;
+        color: #99a6a7;
+        font-weight: 400;
+      }
+      input:not([type="submit"]:focus) {
+        background: map-get($colors, white);
+        color: #415674;
+        outline: none;
+        padding: 10px 25px;
+        font-weight: 600;
+      }
+      .btn-subscribe {
+        height: 60px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        font-size: 16px;
+        font-weight: 700;
       }
     }
-    .section-sub-title {
-      color: map-get($colors, white);
-      text-transform: none;
-      font-size: 20px;
-      font-weight: 400;
-    }
-    .section-title {
-      color: map-get($colors, white);
-    }
+  }
+  .section-sub-title {
+    color: map-get($colors, white);
+    text-transform: none;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .section-title {
+    color: map-get($colors, white);
   }
 }
