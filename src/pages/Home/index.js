@@ -1,16 +1,53 @@
 import { FaCheck, FaUser, FaRegComments } from "react-icons/fa";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { HiOutlineArrowUp } from "react-icons/hi";
 import Slider from "react-slick";
 import { IMAGES } from "../../assets/images/index";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [isTop, setIsTop] = useState(true);
+  const scrollTo = useRef();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.scrollingElement.scrollTop >= 80 ||
+        document.body.scrollTop >= 80
+      ) {
+        scrollTo.current.classList.add("active");
+      } else {
+        scrollTo.current.classList.remove("active", null);
+      }
+    });
+    return () => window.removeEventListener("scroll", null);
+  }, []);
+
+  useEffect(() => {
+    const scrollY = window.pageYOffset;
+    if (scrollY >= 80) {
+      setIsTop(false);
+    }
+    return () => {};
+  }, []);
+
+  const onScroll = () => {
+    const height = document.getElementById("root").clientHeight;
+    window.scroll({
+      top: isTop ? height : 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    setIsTop(!isTop);
+  };
+
   const settings = {
     infinite: true,
     // arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <button className="slick-arrow prev-arrow"></button>,
-    nextArrow: <button className="slide-arrow next-arrow"></button>,
+    prevArrow: <MdKeyboardArrowLeft className="slide-arrow prev-arrow" />,
+    nextArrow: <MdKeyboardArrowRight className="slide-arrow next-arrow" />,
   };
   const settings_brand = {
     infinite: true,
@@ -526,6 +563,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="scroll flex" ref={scrollTo}>
+        <HiOutlineArrowUp onClick={onScroll} />
+      </div>
     </>
   );
 }

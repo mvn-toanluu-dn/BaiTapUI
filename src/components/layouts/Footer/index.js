@@ -1,8 +1,7 @@
 import { FiPhoneCall } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { RiMailOpenLine } from "react-icons/ri";
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
-import { TiSocialLinkedin } from "react-icons/ti";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { IMAGES } from "../../../assets/images/index";
 export default function Footer() {
   return (
@@ -98,7 +97,7 @@ export default function Footer() {
                   <FaTwitter className="icon" />
                 </div>
                 <div className="footer-img mr-10">
-                  <TiSocialLinkedin className="icon" />
+                  <FaLinkedinIn className="icon" />
                 </div>
               </div>
             </div>

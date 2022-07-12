@@ -1,6 +1,6 @@
 import { IMAGES } from "../../../assets/images/index";
 import { FiSearch } from "react-icons/fi";
-import { BsCart2 } from "react-icons/bs";
+import { BsCart2, BsChevronDown } from "react-icons/bs";
 import { useEffect, useRef } from "react";
 export default function Header() {
   const headerRef = useRef();
@@ -28,14 +28,29 @@ export default function Header() {
             </div>
             <nav className="header-nav">
               <ul className="header-list">
-                <li className="item-menu home">Home</li>
+                <li className="item-menu home">
+                  Home
+                  <span className="icon-down-menu">
+                    <BsChevronDown />
+                  </span>
+                </li>
                 <li className="item-menu">Aboute Us</li>
-                <li className="item-menu">Pages</li>
-                <li className="item-menu">Blog</li>
+                <li className="item-menu">
+                  Pages
+                  <span className="icon-down-menu">
+                    <BsChevronDown />
+                  </span>
+                </li>
+                <li className="item-menu">
+                  Blog
+                  <span className="icon-down-menu">
+                    <BsChevronDown />
+                  </span>
+                </li>
                 <li className="item-menu">Contact</li>
               </ul>
             </nav>
-            <div className="header-right">
+            <div className="header-right ml-15">
               <div className="item-icon search">
                 <i className="search" href="/">
                   <FiSearch />
@@ -45,6 +60,7 @@ export default function Header() {
                 <i className="" href="/#">
                   <BsCart2 />
                 </i>
+                <span className="count">0</span>
               </div>
               <button className="btn get-start">Lets's Talk</button>
             </div>
