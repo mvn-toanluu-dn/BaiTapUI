@@ -43,7 +43,7 @@ export default function Home() {
 
   const buttonIsVisible = useRef();
   const introIsVisible = useRef();
-  const [opacity, setOpacity] = useState();
+  // const [opacity, setOpacity] = useState();
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
