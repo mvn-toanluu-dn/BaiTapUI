@@ -36,7 +36,7 @@
       }
     }
     .section-content {
-      padding-top: 20px;
+      padding-top: 150px;
       // margin-left: 50px;
       // position: relative;
       .sub-title {
@@ -52,7 +52,7 @@
         letter-spacing: 1px;
         margin-bottom: 10px;
         opacity: 1;
-        margin-top: 20%;
+        // margin-top: 20%;
       }
       .title {
         font-size: 72px;
@@ -66,47 +66,17 @@
         font-weight: 600;
         color: #fff;
         margin-top: 5%;
+        opacity: 0;
+        // animation: isVisible-text 1.2s ease 0.9s;
+        visibility: hidden;
       }
-      .btn {
-        margin-top: 12%;
-        margin-left: 0;
-        color: white;
-        padding: 30px 57px;
-        // &:hover {
-        //   color: map-get($colors, primary);
-        //   background: map-get($colors, white);
-        // }
-        // &:hover {
-        //   content: "Read More";
-        //   transform: skewX(45deg) scale(0, 1);
-        //   transition: all 0.5s ease 0s;
-        //   background-color: #fff;
-        //   color: #005de0;
-        //   border: 2px solid #005de0;
-        // }
-        .read-more {
-          color: inherit;
-          &::after {
-            position: absolute;
-            content: "";
-            z-index: -1;
-            display: block;
-            left: -20%;
-            right: -20%;
-            top: -4%;
-            height: 150%;
-            width: 150%;
-            bottom: 0;
-            background: #fff;
-            transform: skewX(45deg) scale(0, 1);
-            transition: all 0.5s ease 0s;
-          }
-          // background: inherit;
-          // &:hover {
-          //   transform: skewX(45deg) scale(0, 1);
-          //   transition: all 0.5s ease 0s;
-          // }
-        }
+      .btn.btn-read-more {
+        opacity: 0;
+        margin-top: 50px;
+        padding: 0px 55px;
+        height: 60px;
+        line-height: 56px;
+        font-size: 18px;
       }
     }
   }
@@ -636,6 +606,8 @@
         font-weight: 600;
       }
       .btn-subscribe {
+        background: map-get($colors, primary);
+        color: map-get($colors, white);
         height: 60px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -649,9 +621,13 @@
     text-transform: none;
     font-size: 20px;
     font-weight: 400;
+    margin-top: 10px;
+    letter-spacing: 0px;
   }
   .section-title {
     color: map-get($colors, white);
+    font-size: 36px;
+    line-height: 40px;
   }
 }
 .active {
@@ -664,21 +640,59 @@
   width: 45px;
   height: 45px;
   border: 2px solid map-get($colors, primary);
-  background-color: none;
   color: map-get($colors, primary);
   border-radius: 50%;
   z-index: 1000;
-  box-shadow: inset 0 0 0 2px rbga(0, 93, 224, 0.2);
   cursor: pointer;
-  animation: active-height 0.5s ease-in-out;
+  animation: active-height 0.3s ease-in-out;
 }
-@keyframes active-height {
+
+.content {
+  animation: animate 1.2s ease 0.6s;
+}
+.content.title {
+  animation-delay: 0.8s;
+}
+
+@keyframes animate {
   from {
     opacity: 0;
-    right: 0;
+    transform: translateY(200px);
   }
   to {
     opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+// .isVisible-intro {
+//   animation: isVisible-text 1.2s ease 0.9s;
+//   // opacity: 1;
+// }
+.isVisible-btn {
+  animation: isVisible-text 1.2s ease 1s;
+  // opacity: 1 !important;
+}
+
+@keyframes isVisible-text {
+  from {
+    opacity: 0;
+    // visibility: hidden;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    // visibility: visible;
+    transform: translateY(0);
+  }
+}
+@keyframes active-height {
+  from {
+    // opacity: 0;
+    right: 0;
+  }
+  to {
+    // opacity: 1;
     right: 45px;
   }
 }

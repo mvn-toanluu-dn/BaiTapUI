@@ -1,5 +1,5 @@
 import { IMAGES } from "../../../assets/images/index";
-import { FiSearch } from "react-icons/fi";
+import { IoSearchOutline } from "react-icons/io5";
 import { BsCart2, BsChevronDown } from "react-icons/bs";
 import { useEffect, useRef } from "react";
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
       <div className="container">
         <div className="header">
           <div className="header-list">
-            <div className="logo">
+            <div className="header-logo">
               <img src={IMAGES.logo} alt="logo" />
             </div>
             <nav className="header-nav">
@@ -52,17 +52,19 @@ export default function Header() {
             </nav>
             <div className="header-right ml-15">
               <div className="item-icon search">
-                <i className="search" href="/">
-                  <FiSearch />
+                <i className="icons search" href="/">
+                  <IoSearchOutline />
                 </i>
               </div>
               <div className="item-icon">
-                <i className="" href="/#">
+                <i className="icons" href="/#">
                   <BsCart2 />
                 </i>
                 <span className="count">0</span>
               </div>
-              <button className="btn get-start">Lets's Talk</button>
+              <button href="/#" className="btn get-start">
+                Lets's Talk
+              </button>
             </div>
           </div>
         </div>

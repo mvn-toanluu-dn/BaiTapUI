@@ -1,8 +1,8 @@
 .btn {
-  @include pxRem(padding, 8 16);
-  @include pxRem(border-radius, 5);
-  @include pxRem(font-size, 18);
-  @include pxRem(height, 40);
+  // @include pxRem(padding, 8 16);
+  // @include pxRem(border-radius, 5);
+  // @include pxRem(font-size, 18);
+  // @include pxRem(height, 40);
   font-family: inherit;
   background: map-get($colors, primary);
   color: map-get($colors, white);
@@ -13,9 +13,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  &:hover {
-    background: map-get($colors, primary-dark);
-  }
+  border-radius: 5px;
   &:focus {
     outline: none;
   }

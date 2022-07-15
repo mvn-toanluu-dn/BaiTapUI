@@ -1,12 +1,12 @@
-import { FaCheck, FaUser, FaRegComments } from "react-icons/fa";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { useEffect, useRef, useState } from "react";
+import { FaCheck, FaRegComments, FaUser } from "react-icons/fa";
 import { HiOutlineArrowUp } from "react-icons/hi";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 import { IMAGES } from "../../assets/images/index";
-import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const [isTop, setIsTop] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const scrollTo = useRef();
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -21,28 +21,51 @@ export default function Home() {
     });
     return () => window.removeEventListener("scroll", null);
   }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
   useEffect(() => {
-    const scrollY = window.pageYOffset;
-    if (scrollY >= 80) {
-      setIsTop(false);
-    }
-    return () => {};
+    const toggleVisibility = () => {
+      if (window.pageYOffset >= 80) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const onScroll = () => {
-    const height = document.getElementById("root").clientHeight;
-    window.scroll({
-      top: isTop ? height : 0,
-      left: 0,
-      behavior: "smooth",
+  const buttonIsVisible = useRef();
+  const introIsVisible = useRef();
+  const [opacity, setOpacity] = useState();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.scrollingElement.scrollTop >= 80 ||
+        document.body.scrollTop >= 80
+      ) {
+        // buttonIsVisible.current.classList.add("isVisible-btn");
+        // introIsVisible.current.classList.add("isVisible-intro");
+        document.querySelector(".intro").style.opacity = 1;
+        document.querySelector(".intro").style.visibility = "visible";
+      } else {
+        // buttonIsVisible.current.classList.remove("isVisible-btn", null);
+        // introIsVisible.current.classList.remove("isVisible-intro", null);
+        document.querySelector(".intro").style.opacity = 0;
+        document.querySelector(".intro").style.visibility = "hidden";
+      }
     });
-    setIsTop(!isTop);
-  };
+    return () => window.removeEventListener("scroll", null);
+  }, []);
 
   const settings = {
     infinite: true,
-    // arrows: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -60,34 +83,28 @@ export default function Home() {
   return (
     <>
       <div className="page-home">
-        <section className="section-hero">
-          <div className="container">
-            <div className="flex">
-              <div className="section-content col-6">
-                <h3 className="sub-title">OPTIMAL SOLUTION FOR IT PLATFORM</h3>
-                <br />
-                <h2 className="title">
-                  We bring great
-                  <br /> Ideas to life
-                </h2>
-                <p className="intro">
-                  We provide the most responsive and functional IT design for
-                  <br />
-                  companies and businesses worldwide.
-                </p>
-                <button className="btn">
-                  <a href="/#" className="read-more">
-                    Read More
-                  </a>
-                </button>
+        <section className="section-hero pt-30">
+          <div className="container flex h-100">
+            <div className="section-content col-6">
+              <h3 className="content sub-title">
+                Optimal solution for it platform
+              </h3>
+
+              <h2 className="content title">We bring great Ideas to life</h2>
+              <p className="intro" ref={introIsVisible}>
+                We provide the most responsive and functional IT design for
+                companies and businesses worldwide.
+              </p>
+              <a href="/#" className="btn btn-read-more" ref={buttonIsVisible}>
+                Read More
+              </a>
+            </div>
+            <div className="section-img col-6">
+              <div className="circle">
+                <img src={IMAGES.shape4} alt="circle" />
               </div>
-              <div className="section-img col-6">
-                <div className="circle">
-                  <img src={IMAGES.shape4} alt="circle" />
-                </div>
-                <div className="people">
-                  <img src={IMAGES.hero4} alt="person" />
-                </div>
+              <div className="people">
+                <img src={IMAGES.hero4} alt="person" />
               </div>
             </div>
           </div>
@@ -563,9 +580,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="scroll flex" ref={scrollTo}>
-        <HiOutlineArrowUp onClick={onScroll} />
-      </div>
+      {isVisible && (
+        <div className="scroll flex" onClick={scrollToTop} ref={scrollTo}>
+          <HiOutlineArrowUp />
+        </div>
+      )}
     </>
   );
 }
