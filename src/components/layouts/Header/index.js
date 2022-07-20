@@ -21,53 +21,134 @@ export default function Header() {
   return (
     <header className="page-header" ref={headerRef}>
       <div className="container">
-        <div className="header">
-          <div className="header-list">
-            <div className="header-logo">
-              <img src={IMAGES.logo} alt="logo" />
-            </div>
-            <nav className="header-nav">
-              <ul className="header-list">
-                <li className="item-menu home">
-                  Home
-                  <span className="icon-down-menu">
-                    <BsChevronDown />
-                  </span>
+        <nav className="header flex">
+          <a href="/#" className="header-logo col-2">
+            <img src={IMAGES.logo} alt="logo" />
+          </a>
+          <ul className="header-list-item flex col-7 mr-10">
+            <li className="item-menu home">
+              <a href="/#"> Home</a>
+              <span className="icon-down-menu">
+                <BsChevronDown />
+              </span>
+              <ul className="sub-menu">
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home one
+                  </a>
                 </li>
-                <li className="item-menu">Aboute Us</li>
-                <li className="item-menu">
-                  Pages
-                  <span className="icon-down-menu">
-                    <BsChevronDown />
-                  </span>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home two
+                  </a>
                 </li>
-                <li className="item-menu">
-                  Blog
-                  <span className="icon-down-menu">
-                    <BsChevronDown />
-                  </span>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home three
+                  </a>
                 </li>
-                <li className="item-menu">Contact</li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home four
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home five
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    home six
+                  </a>
+                </li>
               </ul>
-            </nav>
-            <div className="header-right ml-15">
-              <div className="item-icon search">
-                <i className="icons search" href="/">
-                  <IoSearchOutline />
-                </i>
-              </div>
-              <div className="item-icon">
-                <i className="icons" href="/#">
-                  <BsCart2 />
-                </i>
-                <span className="count">0</span>
-              </div>
-              <button href="/#" className="btn get-start">
-                Lets's Talk
-              </button>
+            </li>
+            <li className="item-menu">
+              <a href="/#">Aboute Us</a>
+            </li>
+            <li className="item-menu">
+              <a href="/#">Pages</a>
+              <span className="icon-down-menu">
+                <BsChevronDown />
+              </span>
+              <ul className="sub-menu">
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    our team
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    service
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    why choose us
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    testimonial
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    pricing
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    login & register
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="item-menu">
+              <a href="/#">Blog</a>
+              <span className="icon-down-menu">
+                <BsChevronDown />
+              </span>
+              <ul className="sub-menu">
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    blog grid
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    latest news
+                  </a>
+                </li>
+                <li className="sub-item">
+                  <a className="sub-item-link" href="/#">
+                    blog details
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="item-menu">
+              <a href="/#">Contact</a>
+            </li>
+          </ul>
+          <div className="header-right ml-15 col-3">
+            <div className="item-icon search">
+              <i className="icons search" href="/">
+                <IoSearchOutline />
+              </i>
             </div>
+            <div className="item-icon cart">
+              <i className="icons cart" href="/#">
+                <BsCart2 />
+              </i>
+              <span className="count">0</span>
+            </div>
+            <a href="/#" className="btn get-start">
+              Lets's Talk
+            </a>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

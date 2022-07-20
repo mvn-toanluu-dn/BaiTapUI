@@ -3,6 +3,12 @@
   text-align: center;
   background: url("../../images/footer-bg-3.jpg") no-repeat center / cover;
   .footer {
+    &-logo {
+      img {
+        width: 170px;
+        height: 56px;
+      }
+    }
     &-img {
       width: 40px;
       height: 40px;
@@ -27,7 +33,7 @@
     }
     &-list {
       justify-content: space-between;
-      padding: 30px 0;
+      padding: 20px 0;
       color: map-get($colors, white);
       align-items: center;
       &-left {
@@ -59,10 +65,12 @@
       font-size: 18px;
     }
     &-item {
+      color: map-get($colors, info-text);
       font-size: 16px;
       line-height: 20px;
       font-weight: 600;
     }
+    cursor: pointer;
   }
   .section-title {
     color: map-get($colors, white);

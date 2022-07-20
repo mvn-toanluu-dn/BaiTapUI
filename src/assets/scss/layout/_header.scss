@@ -10,30 +10,30 @@
 .page-header {
   width: 100%;
   background: white;
-  // position: fixed;
 
   .header {
-    padding: 5px 0;
-    &-list {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    justify-content: space-between;
+    align-items: center;
     &-logo {
       width: 150px;
       height: 50px;
-      // img {
-      //   width: 150px;
-      //   height: 50px;
-      // }
     }
-    &-nav {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
+    &-list-item {
+      .item-menu {
+        display: inline-block;
+        position: relative;
+        padding: 35px 25px;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: capitalize;
+        cursor: pointer;
+        &:hover > .sub-menu {
+          opacity: 1;
+          visibility: visible;
+          top: 70%;
+        }
+      }
       justify-content: flex-end;
-    }
-    &-list {
       .item-menu.home {
         color: map-get($colors, primary);
       }
@@ -63,13 +63,70 @@
     }
     .icons {
       font-size: 20px;
+      cursor: pointer;
+    }
+    .icons.cart {
+      margin-left: 5px;
+    }
+    .sub-menu {
+      position: absolute;
+      left: 0;
+      top: 80%;
+      transform: translateY(10%);
+      width: 270px;
+      background: map-get($colors, white);
+      box-shadow: 0 2px 29px rgba(0, 0, 0, 0.5);
+      padding: 20px 0;
+      border-radius: 5px;
+      border-top: 2px solid #005de0;
+      opacity: 0;
+      z-index: 99;
+      visibility: hidden;
+      transition: all 0.3s linear;
+      .sub-item {
+        position: relative;
+        padding: 10px 30px;
+        &:hover > .sub-menu {
+          position: absolute;
+          top: 100%;
+        }
+        &-link {
+          // padding: 5px 25px;
+          font-size: 15px;
+          font-weight: 600;
+          position: relative;
+          text-transform: capitalize;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: map-get($colors, primary);
+            opacity: 0;
+            visibility: hidden;
+            width: 10px;
+            height: 2px;
+            left: -5px;
+          }
+          &:hover {
+            color: map-get($colors, primary);
+            padding-left: 15px;
+            &::before {
+              opacity: 1;
+              visibility: visible;
+              // left: -5px;
+              animation: sub-item 0.3s linear;
+            }
+          }
+        }
+      }
     }
     &-right {
       display: flex;
       align-items: center;
       position: relative;
       .item-icon {
-        margin-left: 10px;
+        margin: 0 auto;
         width: 40px;
         font-size: 18px;
         &:hover {
@@ -89,7 +146,7 @@
           top: 5px;
           cursor: pointer;
           position: absolute;
-          left: 70px;
+          left: 60px;
         }
       }
       .btn.get-start {
@@ -105,13 +162,12 @@
         font-size: 18px;
         height: 50px;
         line-height: 45px;
-        padding: 0px 45px;
+        padding: 0px 47px;
         margin-left: 10px;
         transition: all 0.3s ease 0s;
         cursor: pointer;
         &:hover {
           color: map-get($colors, primary);
-          border: 2px solid map-get($colors, primary);
           &::after {
             transform: skewX(45deg) scale(1, 1);
           }
@@ -119,7 +175,7 @@
         &::after {
           content: "";
           position: absolute;
-          background: map-get($colors, white);
+          background-color: map-get($colors, white);
           width: 150%;
           height: 150%;
           transform: skewX(45deg) scale(0, 1);
@@ -128,6 +184,7 @@
           right: -20%;
           top: -4%;
           z-index: -1;
+          border: 0;
         }
       }
     }
@@ -141,5 +198,13 @@
   to {
     height: 76px;
     margin-top: 0;
+  }
+}
+@keyframes sub-item {
+  from {
+    left: -25px;
+  }
+  to {
+    left: -5px;
   }
 }

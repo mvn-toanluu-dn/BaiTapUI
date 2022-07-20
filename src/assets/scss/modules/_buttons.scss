@@ -24,6 +24,40 @@
     border-color: map-get($colors, txt-disabled);
     background: map-get($colors, bg-gray-light);
   }
+  font-weight: 700;
+  border: 2px solid map-get($colors, primary);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: map-get($colors, primary);
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 50px;
+  line-height: 45px;
+  padding: 0px 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  &:hover {
+    color: map-get($colors, primary);
+    &::after {
+      transform: skewX(45deg) scale(1, 1);
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: map-get($colors, white);
+    width: 150%;
+    height: 150%;
+    transform: skewX(45deg) scale(0, 1);
+    transition: all 0.5s ease 0s;
+    left: -20%;
+    right: -20%;
+    top: -4%;
+    z-index: -1;
+  }
 }
 .slick-slider {
   &:hover > .slick-arrow {

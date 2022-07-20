@@ -11,17 +11,21 @@ export default function Footer() {
           <div className="container">
             <ul className="footer-top-list flex">
               <li className="footer-top-item col-3">
-                <div className="logo">
+                <a href="/#" className="footer-logo">
                   <img src={IMAGES.logowhite} alt="logo" />
-                </div>
+                </a>
                 <ul className="info pt-20">
-                  <li>
-                    <FiPhoneCall className="info-icon mr-10 mt-2" />{" "}
-                    <span className="info-item">+91 458 654 528</span>
+                  <li className="info mt-10">
+                    <FiPhoneCall className="info-icon mr-10 mt-2" />
+                    <a href="/#" className="info-item">
+                      +91 458 654 528
+                    </a>
                   </li>
                   <li className="info mt-10">
                     <RiMailOpenLine className="info-icon mr-10 mt-2" />
-                    <span className="info-item">info@example.com</span>
+                    <a href="/#" className="info-item">
+                      info@example.com
+                    </a>
                   </li>
                   <li className="info mt-10">
                     <IoLocationOutline className="info-icon mr-10 mt-2" />
@@ -90,15 +94,15 @@ export default function Footer() {
                 <p>© Copyrights 2022 Techmax All rights reserved.</p>
               </div>
               <div className="footer-list-right flex">
-                <div className="footer-img mr-10">
+                <a href="/#" className="footer-img mr-10">
                   <FaFacebookF className="icon" />
-                </div>
-                <div className="footer-img mr-10">
+                </a>
+                <a href="/#" className="footer-img mr-10">
                   <FaTwitter className="icon" />
-                </div>
-                <div className="footer-img mr-10">
+                </a>
+                <a href="/#" className="footer-img mr-10">
                   <FaLinkedinIn className="icon" />
-                </div>
+                </a>
               </div>
             </div>
           </div>
