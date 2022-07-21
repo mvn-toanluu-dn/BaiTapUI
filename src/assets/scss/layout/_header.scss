@@ -2,29 +2,30 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2000;
-  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+  z-index: map-get($zindexs, shink);
+  box-shadow: 0 0 #{f-pxRem(16)} 0 rgba(0, 0, 0, 0.07);
   animation: shink-height 0.5s ease-in-out;
   animation-direction: alternate;
 }
 .page-header {
   width: 100%;
-  background: white;
+  background: map-get($colors, white);
 
   .header {
     justify-content: space-between;
     align-items: center;
     &-logo {
-      width: 150px;
-      height: 50px;
+      @include pxRem(width, 150);
+      @include pxRem(height, 50);
     }
     &-list-item {
+      justify-content: flex-end;
       .item-menu {
+        @include pxRem(padding, 35 25);
+        @include pxRem(font-size, 15);
         display: inline-block;
         position: relative;
-        padding: 35px 25px;
-        font-weight: 700;
-        font-size: 15px;
+        font-weight: map-get($font-weight, bold);
         text-transform: capitalize;
         cursor: pointer;
         &:hover > .sub-menu {
@@ -32,89 +33,77 @@
           visibility: visible;
           top: 70%;
         }
-      }
-      justify-content: flex-end;
-      .item-menu.home {
-        color: map-get($colors, primary);
-      }
-      .item-menu:not(:first-child) {
-        &:hover {
+        &:first-child > a {
+          color: map-get($colors, primary);
+        }
+        &:hover > a {
           color: map-get($colors, primary);
         }
       }
       .icon-down-menu {
-        font-size: 11px;
-        padding: 5px;
+        @include pxRem(font-size, 11);
+        @include pxRem(padding, 5);
       }
     }
     .search {
-      // position: relative;
       &::before {
+        @include pxRem(margin-left, 30);
+        @include pxRem(height, 30);
+        @include pxRem(width, 1);
         content: "";
         position: absolute;
-        // right: 0;
         top: 50%;
-        margin-left: 30px;
         transform: translateY(-50%);
-        background: #ebebeb;
-        width: 1px;
-        height: 30px;
+        background: map-get($colors, gray-light);
       }
     }
     .icons {
-      font-size: 20px;
+      @include pxRem(font-size, 20);
       cursor: pointer;
     }
-    .icons.cart {
-      margin-left: 5px;
-    }
     .sub-menu {
+      @include pxRem(top, 80);
+      @include pxRem(width, 270);
+      @include pxRem(padding, 20 0);
+      @include pxRem(border-radius, 5);
+      transform: translateY(#{f-pxRem(25)});
       position: absolute;
       left: 0;
-      top: 80%;
-      transform: translateY(10%);
-      width: 270px;
       background: map-get($colors, white);
-      box-shadow: 0 2px 29px rgba(0, 0, 0, 0.5);
-      padding: 20px 0;
-      border-radius: 5px;
-      border-top: 2px solid #005de0;
+      box-shadow: 0 #{f-pxRem(2)} #{f-pxRem(29)} rgba(0, 0, 0, 0.05);
+      border-top: #{f-pxRem(2)} solid map-get($colors, primary);
       opacity: 0;
-      z-index: 99;
       visibility: hidden;
+      z-index: map-get($zindexs, all);
       transition: all 0.3s linear;
       .sub-item {
+        @include pxRem(padding, 10 30);
         position: relative;
-        padding: 10px 30px;
         &:hover > .sub-menu {
           position: absolute;
           top: 100%;
         }
         &-link {
-          // padding: 5px 25px;
-          font-size: 15px;
-          font-weight: 600;
+          @include pxRem(font-size, 15);
+          font-weight: map-get($font-weight, medium);
           position: relative;
           text-transform: capitalize;
           &::before {
+            @include pxRem(width, 10);
+            @include pxRem(height, 2);
+            @include pxRem(left, -5);
             content: "";
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: map-get($colors, primary);
             opacity: 0;
-            visibility: hidden;
-            width: 10px;
-            height: 2px;
-            left: -5px;
           }
           &:hover {
             color: map-get($colors, primary);
-            padding-left: 15px;
+            @include pxRem(padding-left, 15);
             &::before {
               opacity: 1;
-              visibility: visible;
-              // left: -5px;
               animation: sub-item 0.3s linear;
             }
           }
@@ -122,48 +111,46 @@
       }
     }
     &-right {
-      display: flex;
       align-items: center;
       position: relative;
       .item-icon {
+        @include pxRem(width, 40);
+        @include pxRem(font-size, 18);
         margin: 0 auto;
-        width: 40px;
-        font-size: 18px;
         &:hover {
           color: map-get($colors, primary);
         }
         .count {
-          width: 20px;
-          height: 20px;
-          line-height: 20px;
+          @include pxRem(width, 20);
+          @include pxRem(height, 20);
+          @include pxRem(line-height, 20);
+          @include pxRem(font-size, 10);
+          @include pxRem(top, 5);
+          @include pxRem(left, 60);
           text-align: center;
-          background: #005de0;
+          background: map-get($colors, primary);
           border-radius: 50%;
-          font-size: 10px;
-          font-weight: 400;
+          font-weight: map-get($font-weight, normal);
           display: inline-block;
-          color: #ffffff;
-          top: 5px;
+          color: map-get($colors, white);
           cursor: pointer;
           position: absolute;
-          left: 60px;
         }
       }
       .btn.get-start {
-        font-weight: 700;
-        border: 2px solid map-get($colors, primary);
+        @include pxRem(border-radius, 5);
+        @include pxRem(font-size, 18);
+        @include pxRem(height, 50);
+        @include pxRem(line-height, 45);
+        @include pxRem(padding, 0 47);
+        @include pxRem(margin-left, 10);
+        font-weight: map-get($font-weight, bold);
+        border: #{f-pxRem(2)} solid map-get($colors, primary);
         display: inline-block;
         position: relative;
         overflow: hidden;
-        z-index: 1;
         background-color: map-get($colors, primary);
-        color: #ffffff;
-        border-radius: 5px;
-        font-size: 18px;
-        height: 50px;
-        line-height: 45px;
-        padding: 0px 47px;
-        margin-left: 10px;
+        color: map-get($colors, white);
         transition: all 0.3s ease 0s;
         cursor: pointer;
         &:hover {
@@ -192,19 +179,19 @@
 }
 @keyframes shink-height {
   from {
-    height: 0px;
-    margin-top: -150px;
+    height: 0;
+    @include pxRem(margin-top, -150);
   }
   to {
-    height: 76px;
+    @include pxRem(height, 76);
     margin-top: 0;
   }
 }
 @keyframes sub-item {
   from {
-    left: -25px;
+    @include pxRem(left, -25);
   }
   to {
-    left: -5px;
+    @include pxRem(left, -5);
   }
 }

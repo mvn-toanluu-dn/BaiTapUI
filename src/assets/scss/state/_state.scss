@@ -2,43 +2,43 @@
   display: none;
 }
 .section-title {
-  color: #333;
-  font-size: 40px;
-  line-height: 54px;
-  font-weight: 700;
+  @include pxRem(font-size, 40);
+  @include pxRem(line-height, 54);
+  color: map-get($colors, txt-black);
+  font-weight: map-get($font-weight, bold);
 }
 .section-sub-title {
-  font-size: 14px;
+  @include pxRem(font-size, 14);
+  @include pxRem(line-height, 30);
+  @include pxRem(letter-spacing, 1);
   color: map-get($colors, primary);
-  line-height: 30px;
-  letter-spacing: 1px;
-  font-weight: 800;
+  font-weight: map-get($font-weight, verybold);
   text-transform: uppercase;
 }
 .title-blue {
   color: map-get($colors, primary);
 }
 .author-text {
-  margin-right: 30px;
+  @include pxRem(margin-right, 30);
   .name {
-    font-weight: 700;
-    font-size: 18px;
+    @include pxRem(font-size, 18);
+    font-weight: map-get($font-weight, bold);
     color: map-get($colors, txt-black);
     line-height: 1.5;
   }
   .designation {
-    font-weight: 400;
-    font-size: 14px;
-    color: #4c4d56;
+    @include pxRem(font-size, 14);
+    font-weight: map-get($font-weight, normal);
+    color: map-get($colors, gray-black-text);
     line-height: 1.75;
   }
 }
 .section-padding {
-  padding: 145px 0;
+  @include pxRem(padding, 145 0);
 }
 
 .btn {
-  line-height: 46px;
-  padding: 25px 47px;
-  font-weight: 700;
+  @include pxRem(line-height, 46);
+  @include pxRem(padding, 25 47);
+  font-weight: map-get($font-weight, bold);
 }

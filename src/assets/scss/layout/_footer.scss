@@ -3,25 +3,25 @@
   text-align: center;
   background: url("../../images/footer-bg-3.jpg") no-repeat center / cover;
   .footer {
+    @include pxRem(font-size, 18);
     &-logo {
       img {
-        width: 170px;
-        height: 56px;
+        @include pxRem(width, 170);
+        @include pxRem(height, 56);
       }
     }
     &-img {
-      width: 40px;
-      height: 40px;
-      background-color: #15203b;
+      @include pxRem(width, 40);
+      @include pxRem(height, 40);
+      background-color: map-get($colors, icon-footer);
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       .icon {
-        color: white;
-        font-size: 18px;
-        line-height: 40px;
-        font-weight: 400;
+        @include pxRem(line-height, 40);
+        color: map-get($colors, white);
+        font-weight: map-get($font-weight, normal);
         cursor: pointer;
         &:hover {
           color: map-get($colors, primary);
@@ -29,32 +29,37 @@
       }
     }
     &-bottom {
-      border-top: 1px solid #1a253f;
+      border-top: #{f-pxRem(1)} solid map-get($colors, border-footer);
     }
     &-list {
+      @include pxRem(padding, 20 0);
       justify-content: space-between;
-      padding: 20px 0;
       color: map-get($colors, white);
       align-items: center;
       &-left {
         color: map-get($colors, info-text);
-        font-weight: 400;
+        font-weight: map-get($font-weight, normal);
       }
     }
     &-top {
-      // height: 400px;
-      padding-top: 290px;
-      padding-bottom: 70px;
+      @include pxRem(padding-top, 290);
+      @include pxRem(padding-bottom, 70);
       &-item {
         text-align: left;
       }
     }
     &-item {
-      margin-top: 15px;
+      @include pxRem(margin-top, 15);
       a {
+        @include pxRem(font-size, 14);
         color: map-get($colors, info-text);
-        font-weight: 400;
+        font-weight: map-get($font-weight, normal);
         line-height: inherit;
+        transition: all 0.3s linear;
+      }
+      a:hover {
+        @include pxRem(padding-left, 15);
+        color: map-get($colors, primary);
       }
     }
   }
@@ -62,18 +67,20 @@
     color: map-get($colors, info-text);
     &-icon {
       color: map-get($colors, primary);
-      font-size: 18px;
     }
     &-item {
+      @include pxRem(font-size, 16);
+      @include pxRem(line-height, 20);
       color: map-get($colors, info-text);
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: 600;
+      font-weight: map-get($font-weight, medium);
+    }
+    a:hover {
+      color: map-get($colors, primary);
     }
     cursor: pointer;
   }
   .section-title {
+    @include pxRem(font-size, 20);
     color: map-get($colors, white);
-    font-size: 20px;
   }
 }

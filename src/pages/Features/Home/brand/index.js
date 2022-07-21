@@ -18,7 +18,7 @@ function Brand() {
             successful clients
           </h3>
           <div className="brand-img">
-            <Slider className="img-slider brand-list" {...settings_brand}>
+            <Slider className="img-slider brand-list flex" {...settings_brand}>
               <div className="brand-item">
                 <img className="brand-item" src={IMAGES.brand1} alt="brand" />
               </div>

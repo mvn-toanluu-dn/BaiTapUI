@@ -4,8 +4,10 @@ $font-body: "Manrope", sans-serif;
 // === Font Weight === //
 $font-weight: (
   normal: 400,
+  regular: 500,
   medium: 600,
   bold: 700,
+  verybold: 800,
 );
 
 // == Breakpoints === //
@@ -35,7 +37,18 @@ $colors: (
   brand-js: #f1da4e,
   brand-scss: #be5f8b,
   brand-nodejs: #7cbe42,
+  brand-background: #717171,
   info-text: #c4c5c7,
+  gray-black-text: #4c4d56,
+  blue-dark: #231e32,
+  placeholder: #99a6a7,
+  input: #415674,
+  icon-footer: #15203b,
+  gray-light: #ebebeb,
+  background-hero: #252239,
+  border-footer: #1a253f,
+  background-brand: #fcfcfc,
+  testimonial: #e5eefc,
 );
 
 // === z-index === //
@@ -47,6 +60,15 @@ $zindexs: (
   modal: 1050,
   popover: 1060,
   tooltip: 1070,
+  all: 99,
+  feature: 200,
+  shink: 2000,
+  total: 10,
+  total1: 11,
+  total2: 12,
+  people: 11,
+  active: 1000,
+  button: 1000,
 );
 
 // === Typography === //

@@ -24,19 +24,18 @@
     border-color: map-get($colors, txt-disabled);
     background: map-get($colors, bg-gray-light);
   }
-  font-weight: 700;
-  border: 2px solid map-get($colors, primary);
+  @include pxRem(border-radius, 5);
+  @include pxRem(font-size, 18);
+  @include pxRem(height, 50);
+  @include pxRem(line-height, 45);
+  @include pxRem(padding, 0 45);
+  font-weight: map-get($font-weight, bold);
+  border: #{f-pxRem(2)} solid map-get($colors, primary);
   display: inline-block;
   position: relative;
   overflow: hidden;
-  z-index: 1;
   background-color: map-get($colors, primary);
-  color: #ffffff;
-  border-radius: 5px;
-  font-size: 18px;
-  height: 50px;
-  line-height: 45px;
-  padding: 0px 45px;
+  color: map-get($colors, white);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   &:hover {
@@ -62,25 +61,25 @@
 .slick-slider {
   &:hover > .slick-arrow {
     opacity: 1;
-    margin: -20px 10px 0px 10px;
+    @include pxRem(margin, -20 10 0 10);
     transition: margin 1s;
   }
   .slick-arrow {
+    @include pxRem(width, 45);
+    @include pxRem(height, 45);
+    @include pxRem(font-size, 18);
+    @include pxRem(margin-top, -20);
     display: inline-block;
     color: map-get($colors, primary);
-    border: 1px solid map-get($colors, primary);
+    border: #{f-pxRem(1)} solid map-get($colors, primary);
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-    box-shadow: 0px 5px 57px 0px rgba(0, 0, 0, 0.15);
-    margin-top: -20px;
+    box-shadow: 0px #{f-pxRem(5)} #{f-pxRem(57)} 0px rgba(0, 0, 0, 0.15);
     opacity: 0;
     position: absolute;
-    z-index: 1000;
+    z-index: map-get($zindexs, button);
   }
   .slick-prev {
-    left: 45px;
+    @include pxRem(left, 45);
     &:hover {
       color: map-get($colors, white);
       background-color: map-get($colors, primary);
@@ -88,7 +87,7 @@
     }
   }
   .slick-next {
-    right: 45px;
+    @include pxRem(right, 45);
     &:hover {
       color: map-get($colors, white);
       background-color: map-get($colors, primary);

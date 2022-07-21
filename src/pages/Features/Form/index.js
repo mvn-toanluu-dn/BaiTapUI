@@ -11,7 +11,7 @@ function Form() {
               Enter your email address to register to our newsletter
             </h4>
           </div>
-          <form className="form-sub">
+          <form className="form-sub flex">
             <input className="form-sub-input col-6" placeholder="Your Email" />
             <button className="btn-subscribe col-2">Subscribe</button>
           </form>

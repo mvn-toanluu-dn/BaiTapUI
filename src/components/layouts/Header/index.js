@@ -132,14 +132,14 @@ export default function Header() {
               <a href="/#">Contact</a>
             </li>
           </ul>
-          <div className="header-right ml-15 col-3">
+          <div className="header-right flex ml-15 col-3">
             <div className="item-icon search">
               <i className="icons search" href="/">
                 <IoSearchOutline />
               </i>
             </div>
             <div className="item-icon cart">
-              <i className="icons cart" href="/#">
+              <i className="icons cart ml-5" href="/#">
                 <BsCart2 />
               </i>
               <span className="count">0</span>

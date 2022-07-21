@@ -1,81 +1,71 @@
 .page-home {
+  @include pxRem(padding-bottom, 145);
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-bottom: 145px;
   .section-hero {
     background: url("../../images/hero-4-bg.jpg") no-repeat center / cover;
     height: map-get($heights, hero-height);
     position: relative;
     overflow: hidden;
     .section-img {
+      @include pxRem(padding-top, 75);
       position: relative;
-      padding-top: 75px;
       .circle {
-        animation: xoayvong 50s 0.3s linear infinite;
+        animation: circle 50s 0.3s linear infinite;
         position: absolute;
-        z-index: 10;
+        z-index: map-get($zindexs, total);
         right: 5%;
         overflow: hidden;
-        // border-radius: 50%;
         max-width: 100%;
         img {
-          // border-radius: 50%;
           max-width: 100%;
         }
       }
       .people {
+        @include pxRem(top, 80);
         $height1: map-get($heights, hero-height);
-        // $height: map-get($heights, hero-height1);
         position: absolute;
-        top: 80px;
-        z-index: 100;
+        z-index: map-get($zindexs, people);
         right: 10%;
-        height: calc(#{$height1} - 75px);
+        height: calc(#{$height1} - #{f-pxRem(75)});
       }
     }
     .section-content {
-      padding-top: 150px;
-      // margin-left: 50px;
-      // position: relative;
+      @include pxRem(padding-top, 150);
       .sub-title {
+        @include pxRem(font-size, 14);
+        @include pxRem(border-radius, 30);
+        @include pxRem(line-height, 38);
+        @include pxRem(padding, 0 20);
+        @include pxRem(margin-bottom, 30);
         display: inline-block;
-        font-size: 14px;
-        font-weight: 800;
+        font-weight: map-get($font-weight, verybold);
         text-transform: uppercase;
-        background: #252239;
-        color: #fff;
-        border-radius: 30px;
-        line-height: 38px;
-        padding: 0 20px;
+        background: map-get($colors, background-hero);
+        color: map-get($colors, white);
         letter-spacing: 1px;
-        margin-bottom: 10px;
-        opacity: 1;
-        // margin-top: 20%;
       }
       .title {
-        font-size: 72px;
-        line-height: 92px;
-        color: #fff;
-        font-weight: 700;
+        @include pxRem(font-size, 72);
+        @include pxRem(line-height, 92);
+        color: map-get($colors, white);
+        font-weight: map-get($font-weight, bold);
       }
       .intro {
-        font-size: 18px;
-        line-height: 30px;
-        font-weight: 600;
-        color: #fff;
+        @include pxRem(font-size, 18);
+        @include pxRem(line-height, 30);
+        font-weight: map-get($font-weight, medium);
+        color: map-get($colors, white);
         margin-top: 5%;
         opacity: 0;
-        // animation: isVisible-text 1.2s ease 0.9s;
-        visibility: hidden;
       }
       .btn.btn-read-more {
-        opacity: 0;
-        margin-top: 60px;
-        padding: 0px 55px;
-        height: 60px;
-        line-height: 56px;
-        font-size: 18px;
+        @include pxRem(margin-top, 60);
+        @include pxRem(padding, 0 55);
+        @include pxRem(height, 60);
+        @include pxRem(line-height, 56);
+        @include pxRem(font-size, 18);
       }
     }
   }
@@ -85,111 +75,110 @@
       position: relative;
     }
     .features-list {
-      z-index: 1000;
+      z-index: map-get($zindexs, feature);
       position: absolute;
       top: -50%;
       transform: translateY(-50%);
       &-item {
+        @include pxRem(border-radius, 10);
+        @include pxRem(padding, 40 35);
         background: url("../../images/features-4-bg.jpg") no-repeat center / cover;
-        border-radius: 10px;
-        padding: 40px 35px;
         align-items: center;
         justify-content: center;
       }
       &-title {
-        padding-right: 20px;
-        line-height: 30px;
-        font-size: 22px;
+        @include pxRem(padding-right, 20);
+        @include pxRem(line-height, 30);
+        @include pxRem(font-size, 22);
         color: map-get($colors, white);
-        font-weight: 700;
+        font-weight: map-get($font-weight, bold);
       }
     }
   }
   .section-about {
-    padding-bottom: 270px;
-    padding-top: 230px;
+    @include pxRem(padding-bottom, 270);
+    @include pxRem(padding-top, 230);
     .section-sub-title {
-      margin-bottom: 12px;
+      @include pxRem(margin-bottom, 12);
     }
     .about {
       margin: 0 auto;
-      max-width: 760px;
+      @include pxRem(max-width, 760);
       display: block;
       text-align: center;
       &-img {
         position: relative;
         .abshape {
+          @include pxRem(right, 60);
+          @include pxRem(top, 170);
           position: absolute;
-          z-index: 10;
-          right: 60px;
-          top: 170px;
+          z-index: map-get($zindexs, total);
           img {
-            border-radius: 10px;
+            @include pxRem(border-radius, 10);
           }
         }
       }
       &-1 {
         position: absolute;
-        z-index: 100;
+        z-index: map-get($zindexs, total1);
         top: 0;
-        border-radius: 10px;
         img {
-          border-radius: 10px;
+          @include pxRem(border-radius, 10);
         }
       }
       &-2 {
+        @include pxRem(bottom, -132);
         position: absolute;
-        z-index: 200;
-        bottom: -132px;
+        z-index: map-get($zindexs, total2);
         right: 0;
         img {
-          border-radius: 10px;
+          @include pxRem(border-radius, 10);
         }
       }
       &-3 {
+        @include pxRem(top, 38);
+        @include pxRem(right, 14);
         position: absolute;
-        z-index: 200;
-        top: 38px;
-        right: 14px;
+        z-index: map-get($zindexs, total2);
         img {
-          border-radius: 10px;
+          @include pxRem(border-radius, 10);
         }
       }
       &-content {
-        margin-left: 28px;
+        @include pxRem(margin-left, 28);
       }
       &-text {
-        padding-left: 115px;
+        @include pxRem(padding-left, 115);
         .title {
-          font-size: 24px;
-          line-height: 36px;
+          @include pxRem(font-size, 24);
+          @include pxRem(line-height, 36);
           color: map-get($colors, txt-black);
-          font-weight: 700;
+          font-weight: map-get($font-weight, bold);
         }
         p {
-          font-size: 16px;
-          line-height: 30px;
+          @include pxRem(font-size, 16);
+          @include pxRem(line-height, 30);
+          @include pxRem(margin-top, 35);
           font-family: "Manrope", sans-serif;
-          font-weight: 400;
-          color: #4c4d56;
-          margin-top: 35px;
+          font-weight: map-get($font-weight, normal);
+          color: map-get($colors, gray-black-text);
         }
       }
       &-list {
-        margin-top: 25px;
+        @include pxRem(margin-top, 25);
         .check {
           &-item {
+            @include pxRem(font-size, 16);
+            @include pxRem(line-height, 24);
             display: flex;
             align-items: center;
-            font-size: 16px;
-            line-height: 24px;
-            font-weight: 700;
+            font-weight: map-get($font-weight, bold);
             color: map-get($colors, txt-black);
           }
           &-list-icon {
+            @include pxRem(margin-right, 20);
             display: flex;
             align-items: center;
-            margin-right: 20px;
             color: map-get($colors, primary);
           }
 
@@ -203,13 +192,13 @@
       &-author {
         display: flex;
         align-content: space-between;
-        border-top: 1px solid #ebebeb;
-        margin-top: 40px;
-        padding-top: 30px;
+        border-top: #{f-pxRem(1)} solid map-get($colors, gray-light);
+        @include pxRem(margin-top, 40);
+        @include pxRem(padding-top, 30);
       }
     }
     .section-about-content {
-      margin-top: 105px;
+      @include pxRem(margin-top, 105);
     }
   }
   .section-services {
@@ -220,172 +209,168 @@
       align-items: center;
     }
     &-text {
-      padding: 0 12px;
+      @include pxRem(padding, 0 12);
     }
     &-title {
-      max-width: 690px;
+      @include pxRem(max-width, 690);
     }
     .section-title {
-      font-size: 48px;
-      line-height: 54px;
-      font-weight: 800;
+      @include pxRem(font-size, 48);
+      @include pxRem(line-height, 54);
+      font-weight: map-get($font-weight, verybold);
       color: map-get($colors, txt-black);
       .title-blue {
         color: map-get($colors, primary);
       }
     }
     &-content {
-      padding-top: 40px;
+      @include pxRem(padding-top, 40);
     }
     &-list {
       flex-wrap: wrap;
     }
     &-item {
-      padding: 0 12px;
+      @include pxRem(padding, 0 12);
       &-box {
-        padding: 40px;
-        margin-top: 30px;
-        border: 1px solid #ebebeb;
-        background-color: #fff;
-        border-radius: 10px;
+        @include pxRem(padding, 40);
+        @include pxRem(margin-top, 30);
+        @include pxRem(border-radius, 10);
+        border: 1px solid map-get($colors, gray-light);
+        background-color: map-get($colors, white);
       }
       &-content1 {
-        margin-left: 30px;
+        @include pxRem(margin-left, 30);
       }
       &-text {
-        font-size: 16px;
-        line-height: 30px;
-        font-weight: 400;
-        margin-top: 10px;
-        color: #4c4d56;
+        @include pxRem(font-size, 16);
+        @include pxRem(line-height, 30);
+        @include pxRem(margin-top, 10);
+        font-weight: map-get($font-weight, normal);
+        color: map-get($colors, gray-black-text);
       }
       &-title {
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: 700;
-        color: #231e32;
+        @include pxRem(font-size, 20);
+        @include pxRem(line-height, 30);
+        font-weight: map-get($font-weight, bold);
+        color: map-get($colors, services-title);
       }
       &-img {
         position: relative;
         &::before {
           content: "";
+          @include pxRem(left, -12);
+          @include pxRem(top, 15);
+          @include pxRem(width, 50);
+          @include pxRem(height, 50);
           position: absolute;
-          left: -12px;
-          top: 15px;
-          width: 50px;
-          height: 50px;
-          background: #e5eefc;
+          background: map-get($colors, testimonial);
           border-radius: 50%;
           z-index: 0;
         }
         img {
-          max-width: 50px;
+          @include pxRem(max-width, 50);
           position: relative;
-          z-index: 1;
         }
       }
     }
   }
   .service-button {
-    height: 108px;
     align-items: center;
     justify-content: flex-end;
     .btn.btn-service {
-      height: 80px;
+      @include pxRem(height, 60);
+      @include pxRem(width, 235);
+      @include pxRem(border-radius, 5);
+      @include pxRem(font-size, 18);
       text-align: center;
-      height: 60px;
-      width: 235px;
-      border-radius: 5px;
-      font-weight: 700;
-      font-size: 18px;
+      font-weight: map-get($font-weight, bold);
     }
   }
   .section-banner {
+    @include pxRem(padding-top, 120);
+    @include pxRem(padding-bottom, 130);
     background: url("../../images/counter-bg.jpg") no-repeat center / cover;
-    padding: 100px 0;
     .banner {
-      display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       .section-title {
-        color: #fff;
-        font-size: 50px;
-        line-height: 60px;
+        @include pxRem(font-size, 50);
+        @include pxRem(line-height, 60);
+        color: map-get($colors, white);
       }
       .section-sub-title {
-        margin-top: 35px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
+        @include pxRem(margin-top, 35);
+        @include pxRem(line-height, 24);
+        @include pxRem(font-size, 16);
+        color: map-get($colors, white);
+        font-weight: map-get($font-weight, medium);
         text-transform: none;
         .sub-title-color {
           color: map-get($colors, primary);
           text-transform: capitalize;
           text-decoration: underline;
-          font-weight: 700;
+          font-weight: map-get($font-weight, bold);
         }
       }
     }
   }
   .testimonial {
     &-img {
-      padding: 0 12px;
+      @include pxRem(padding, 0 12);
       &-item {
-        padding-left: 25px;
-        padding-right: 50px;
+        @include pxRem(padding-left, 25);
+        @include pxRem(padding-right, 50);
         position: relative;
         &::before {
+          @include pxRem(width, 430);
+          @include pxRem(height, 430);
           content: "";
           position: absolute;
           left: 0;
           top: 0;
-          width: 430px;
-          height: 430px;
           background: linear-gradient(-90deg, #54d6eb 0%, #035cdd 100%);
           border-radius: 50%;
-          transform: translate(80px, 80px);
+          transform: translate(#{f-pxRem(80)}, #{f-pxRem(80)});
           z-index: -1;
         }
         &::after {
+          @include pxRem(width, 430);
+          @include pxRem(height, 430);
           content: "";
           position: absolute;
           left: 0;
           top: 0;
-          width: 430px;
-          height: 430px;
           background: linear-gradient(-90deg, #54d6eb 0%, #035cdd 100%);
           opacity: 0.4;
           border-radius: 50%;
-          transform: translate(80px, 80px) scale(1.23);
+          transform: translate(#{f-pxRem(80)}, #{f-pxRem(80)}) scale(1.23);
           z-index: -1;
         }
       }
     }
     &-text {
-      padding-left: 12px;
+      @include pxRem(padding-left, 12);
     }
     &-content {
-      padding-top: 35px;
+      @include pxRem(padding-top, 35);
       .section-title {
         text-align: center;
       }
     }
     .slider {
-      background: #fff;
-      box-shadow: 0px 0px 111px 0px rgba(0, 0, 0, 0.15);
-      padding: 35px 42px 50px;
-      border-bottom: 7px solid #005de0;
-      border-radius: 10px;
-      margin-top: 50px;
-      margin-left: 10px;
+      @include pxRem(padding, 35 42 50);
+      @include pxRem(border-radius, 10);
+      @include pxRem(margin-top, 50);
+      @include pxRem(margin-left, 10);
+      background: map-get($colors, white);
+      box-shadow: 0 0 #{f-pxRem(111)} 0 rgba(0, 0, 0, 0.15);
+      border-bottom: #{f-pxRem(7)} solid map-get($colors, primary);
       &-text {
-        font-size: 24px;
-        margin-top: 30px;
-        line-height: 44px;
-        font-weight: 400;
-        color: #4c4d56;
+        @include pxRem(font-size, 24);
+        @include pxRem(margin-top, 30);
+        @include pxRem(line-height, 44);
+        font-weight: map-get($font-weight, normal);
+        color: map-get($colors, gray-black-text);
       }
       &-content {
         text-align: center;
@@ -393,41 +378,39 @@
           margin: auto;
         }
         .author-text {
-          margin-top: 50px;
-          margin-right: 0;
+          @include pxRem(margin-top, 50);
           text-align: center;
           .name {
-            font-size: 16px;
-            line-height: 20px;
-            color: #231e32;
+            @include pxRem(font-size, 16);
+            @include pxRem(line-height, 20);
+            color: map-get($colors, blue-dark);
           }
           .designation {
             color: map-get($colors, primary);
-            font-size: 12px;
+            @include pxRem(font-size, 12);
           }
         }
       }
     }
   }
   .section-testimonial {
-    padding: 100px 0;
+    @include pxRem(padding, 100 0);
   }
   .section-brand {
-    background: #fbfbfc;
+    background: map-get($colors, background-brand);
     .brand {
       text-align: center;
       .section-title {
-        font-size: 22px;
-        font-weight: 600;
-        color: #717171;
-        margin-top: -7px;
+        @include pxRem(font-size, 22);
+        @include pxRem(margin-top, -7);
+        font-weight: map-get($font-weight, medium);
+        color: map-get($colors, brand-background);
       }
       &-img {
+        @include pxRem(margin, 45 auto 0);
         width: 100%;
-        margin: 45px auto 0;
       }
       &-list {
-        display: flex;
         justify-content: space-around;
         align-items: center;
         .slick-track {
@@ -451,39 +434,39 @@
     }
   }
   .section-blog {
-    margin-bottom: 60px;
+    @include pxRem(margin-bottom, 60);
     .blog {
       &-title {
-        max-width: 690px;
+        @include pxRem(max-width, 690);
         margin: 0 auto;
         text-align: center;
         .section-sub-title {
-          margin-bottom: 12px;
+          @include pxRem(margin-bottom, 12);
         }
       }
       &-list {
         justify-content: space-between;
       }
       &-content {
-        padding-top: 35px;
+        @include pxRem(padding-top, 35);
       }
       &-item {
-        padding: 0 8px;
+        @include pxRem(padding, 0 8);
       }
       &-item:first-child {
-        margin-left: -8px;
+        @include pxRem(margin-left, -8);
       }
       &-item:last-child {
-        margin-right: -8px;
+        @include pxRem(margin-right, -8);
       }
       &-single {
+        @include pxRem(margin-top, 30);
         position: relative;
-        margin-top: 30px;
         background: map-get($colors, white);
-        box-shadow: 0px 0px 98px 0px rgba(0, 0, 0, 0.07);
+        box-shadow: 0px 0px #{f-pxRem(98)} 0px rgba(0, 0, 0, 0.07);
         .img-blog {
+          @include pxRem(border-radius, 10);
           overflow: hidden;
-          border-radius: 10px;
           img {
             transition: all 0.3s linear;
           }
@@ -492,39 +475,39 @@
           transform: scale(1.1);
         }
         .top-meta {
+          @include pxRem(top, 35);
+          @include pxRem(left, 30);
+          @include pxRem(font-size, 14);
+          @include pxRem(border-radius, 5);
+          @include pxRem(line-height, 12);
+          @include pxRem(padding, 10);
+          @include pxRem(width, 65);
+          @include pxRem(height, 65);
           position: absolute;
-          top: 35px;
-          left: 30px;
           background-image: linear-gradient(120deg, #54d6eb 0%, #035cdd 100%);
           color: map-get($colors, white);
-          font-size: 14px;
-          border-radius: 5px;
           text-align: center;
-          line-height: 12px;
-          padding: 10px;
-          width: 65px;
-          height: 65px;
           .day {
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 30px;
+            @include pxRem(font-size, 28);
+            @include pxRem(line-height, 30);
+            font-weight: map-get($font-weight, regular);
             display: block;
             text-align: center;
           }
         }
       }
       &-text {
+        @include pxRem(padding, 40);
+        @include pxRem(bottom, 10);
         position: absolute;
-        padding: 40px;
-        bottom: 10px;
         .content-title {
-          margin-top: 15px;
-          padding-right: 20px;
+          @include pxRem(margin-top, 15);
+          @include pxRem(padding-right, 20);
           a {
+            @include pxRem(font-size, 22);
+            @include pxRem(line-height, 30);
             color: map-get($colors, white);
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 30px;
+            font-weight: map-get($font-weight, bold);
             &:hover {
               color: map-get($colors, primary);
             }
@@ -533,23 +516,20 @@
       }
       &-meta {
         .meta-item {
+          @include pxRem(margin-right, 15);
+          @include pxRem(font-size, 14);
+          @include pxRem(line-height, 24);
           display: flex;
           justify-content: flex-start;
           align-items: center;
           color: map-get($colors, white);
-          margin-right: 15px;
-          font-size: 14px;
-          line-height: 24px;
-          font-weight: 600;
+          font-weight: map-get($font-weight, medium);
           .blog-icon {
-            margin-right: 10px;
+            @include pxRem(margin-right, 10);
             color: map-get($colors, primary);
           }
           a {
             color: map-get($colors, white);
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 600;
             &:hover {
               color: map-get($colors, primary);
             }
@@ -558,7 +538,7 @@
       }
     }
 
-    @keyframes xoayvong {
+    @keyframes circle {
       from {
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
@@ -573,86 +553,85 @@
   }
 }
 .section-form {
+  @include pxRem(height, 400);
   position: absolute;
   bottom: 0;
   z-index: 1;
-  height: 400px;
   top: 100%;
   transform: translateY(-50%);
   width: 100%;
   .form {
+    @include pxRem(height, 400);
+    @include pxRem(padding, 0 50);
+    @include pxRem(border-radius, 10);
     flex-direction: column;
     justify-content: center;
-    height: 400px;
     background: url("../../images/subscribe-bg.jpg") no-repeat center / cover;
-    padding: 0 50px;
-    border-radius: 10px;
     &-content {
+      @include pxRem(margin-bottom, 40);
       text-align: center;
-      margin-bottom: 40px;
     }
     &-sub {
       width: 100%;
-      display: flex;
       justify-content: center;
       &-input {
-        height: 60px;
+        @include pxRem(height, 60);
+        @include pxRem(border-top-left-radius, 4);
+        @include pxRem(border-bottom-left-radius, 4);
         border: none;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
       }
       ::placeholder {
-        font-size: 18px;
-        color: #99a6a7;
-        font-weight: 400;
+        @include pxRem(font-size, 18);
+        color: map-get($colors, placeholder);
+        font-weight: map-get($font-weight, normal);
       }
       input:not([type="submit"]:focus) {
+        @include pxRem(padding, 10 25);
         background: map-get($colors, white);
-        color: #415674;
+        color: map-get($colors, input);
         outline: none;
-        padding: 10px 25px;
-        font-weight: 600;
+        font-weight: map-get($font-weight, medium);
       }
       .btn-subscribe {
+        @include pxRem(border-radius, 4);
+        @include pxRem(font-size, 16);
         background: map-get($colors, primary);
         color: map-get($colors, white);
-        height: 60px;
-        border-radius: 4px;
-        border: 1px solid map-get($colors, primary);
+        height: inherit;
+        border: #{f-pxRem(1)} solid map-get($colors, primary);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        font-size: 16px;
-        font-weight: 700;
+        font-weight: map-get($font-weight, bold);
       }
     }
   }
   .section-sub-title {
+    @include pxRem(font-size, 20);
+    @include pxRem(margin-top, 10);
     color: map-get($colors, white);
     text-transform: none;
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 10px;
-    letter-spacing: 0px;
+    font-weight: map-get($font-weight, normal);
+    letter-spacing: 0;
   }
   .section-title {
+    @include pxRem(font-size, 36);
+    @include pxRem(line-height, 40);
     color: map-get($colors, white);
-    font-size: 36px;
-    line-height: 40px;
   }
 }
 .active {
+  @include pxRem(right, 50);
+  @include pxRem(bottom, 45);
+  @include pxRem(font-size, 22);
+  @include pxRem(width, 45);
+  @include pxRem(height, 45);
   position: fixed;
-  right: 50px;
-  bottom: 45px;
-  font-size: 22px;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  border: 2px solid map-get($colors, primary);
+  border: #{f-pxRem(2)} solid map-get($colors, primary);
   color: map-get($colors, primary);
   border-radius: 50%;
-  z-index: 1000;
+  z-index: map-get($zindexs, active);
   cursor: pointer;
   animation: active-height 0.3s ease-in-out;
 }
@@ -667,42 +646,31 @@
 @keyframes animate {
   from {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(#{f-pxRem(200)});
   }
   to {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
-// .isVisible-intro {
-//   animation: isVisible-text 1.2s ease 0.9s;
-//   // opacity: 1;
-// }
 .isVisible-btn {
   animation: isVisible-text 1.2s ease 1s;
-  // opacity: 1 !important;
 }
 
 @keyframes isVisible-text {
   from {
-    // opacity: 0;
-    // visibility: hidden;
-    transform: translateY(200px);
+    transform: translateY(#{f-pxRem(200)});
   }
   to {
-    // opacity: 1;
-    // visibility: visible;
     transform: translateY(0);
   }
 }
 @keyframes active-height {
   from {
-    // opacity: 0;
     right: 0;
   }
   to {
-    // opacity: 1;
-    right: 45px;
+    @include pxRem(right, 45);
   }
 }
