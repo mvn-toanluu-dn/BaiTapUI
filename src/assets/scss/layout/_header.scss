@@ -18,6 +18,9 @@
       @include pxRem(width, 150);
       @include pxRem(height, 50);
     }
+    &-menu {
+      justify-content: flex-end;
+    }
     &-list-item {
       justify-content: flex-end;
       .item-menu {
@@ -110,12 +113,13 @@
         }
       }
     }
-    &-right {
+    &-action {
       align-items: center;
       position: relative;
       .item-icon {
         @include pxRem(width, 40);
         @include pxRem(font-size, 18);
+        position: relative;
         margin: 0 auto;
         &:hover {
           color: map-get($colors, primary);
@@ -125,8 +129,8 @@
           @include pxRem(height, 20);
           @include pxRem(line-height, 20);
           @include pxRem(font-size, 10);
-          @include pxRem(top, 5);
-          @include pxRem(left, 60);
+          @include pxRem(top, -10);
+          @include pxRem(left, 15);
           text-align: center;
           background: map-get($colors, primary);
           border-radius: 50%;
@@ -149,6 +153,7 @@
         display: inline-block;
         position: relative;
         overflow: hidden;
+        z-index: 1;
         background-color: map-get($colors, primary);
         color: map-get($colors, white);
         transition: all 0.3s ease 0s;
@@ -175,6 +180,9 @@
         }
       }
     }
+    &-hidden-menu {
+      display: none;
+    }
   }
 }
 @keyframes shink-height {
@@ -195,5 +203,11 @@
     @include pxRem(left, -5);
   }
 }
-@media screen {
+@media (min-width: 1200px) {
+  .header {
+    
+  }
+  li > .btn.get-start {
+    display: none;
+  }
 }

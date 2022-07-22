@@ -3,7 +3,6 @@ import { IMAGES } from "../../../../assets/images";
 function Hero() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      console.log(window.scrollY);
       if (window.scrollY > 0) {
         document.querySelector(".intro").style.animation =
           "isVisible-text 1.2s ease";
