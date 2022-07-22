@@ -37,6 +37,7 @@
       color: map-get($colors, white);
       align-items: center;
       &-left {
+        @include pxRem(font-size, 14);
         color: map-get($colors, info-text);
         font-weight: map-get($font-weight, normal);
       }

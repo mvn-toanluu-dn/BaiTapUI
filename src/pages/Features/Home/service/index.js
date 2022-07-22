@@ -1,6 +1,38 @@
 import React from "react";
 import { IMAGES } from "../../../../assets/images";
 function Services() {
+  const services = [
+    {
+      src: IMAGES.feature6,
+      title: "Analysis",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+    {
+      src: IMAGES.feature1,
+      title: "Digital marketing",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+    {
+      src: IMAGES.feature3,
+      title: "Data Security",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+    {
+      src: IMAGES.feature2,
+      title: "Innovation",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+    {
+      src: IMAGES.feature7,
+      title: "Seo & Optimization",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+    {
+      src: IMAGES.feature8,
+      title: "Email Marketing",
+      text: "Accelerate innovation with world-class tech teams. Our all service offerings to enhance",
+    },
+  ];
   return (
     <section className="section-services section-padding">
       <div className="container">
@@ -23,90 +55,19 @@ function Services() {
           </div>
           <div className="service-content">
             <ul className="service-list flex">
-              <li className="service-item col-4">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature6} alt="feature6" />
+              {services.map((service) => (
+                <li className="service-item col-4">
+                  <div className="service-item-box flex">
+                    <div className="service-item-img">
+                      <img src={service.src} alt="feature6" />
+                    </div>
+                    <div className="service-item-content1">
+                      <h3 className="service-item-title">{service.title}</h3>
+                      <p className="service-item-text">{service.text}</p>
+                    </div>
                   </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Analysis</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="service-item col-4">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature1} alt="feature6" />
-                  </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Digital marketing</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="service-item col-4 pr-0">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature3} alt="feature6" />
-                  </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Data Security</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="service-item col-4">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature2} alt="feature6" />
-                  </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Innovation</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="service-item col-4">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature7} alt="feature6" />
-                  </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Seo & Optimization</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li className="service-item col-4 pr-0">
-                <div className="service-item-box flex">
-                  <div className="service-item-img">
-                    <img src={IMAGES.feature8} alt="feature6" />
-                  </div>
-                  <div className="service-item-content1">
-                    <h3 className="service-item-title">Email Marketing</h3>
-                    <p className="service-item-text">
-                      Accelerate innovation with world-class tech teams. Our all
-                      service offerings to enhance
-                    </p>
-                  </div>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

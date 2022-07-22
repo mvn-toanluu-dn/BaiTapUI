@@ -4,6 +4,40 @@ import { RiMailOpenLine } from "react-icons/ri";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { IMAGES } from "../../../assets/images/index";
 export default function Footer() {
+  const items = [
+    {
+      title: "Useful Links",
+      item1: "Terms & Conditions",
+      item2: "About Company",
+      item3: "Payment Gatway",
+      item4: "Policy",
+    },
+    {
+      title: "Our Services",
+      item1: "Data Security",
+      item2: "IT Managment",
+      item3: "Outsourcing",
+      item4: "Networking",
+    },
+    {
+      title: "Support",
+      item1: "Documentation",
+      item2: "Support",
+      item3: "FAQS",
+      item4: "Download",
+    },
+  ];
+  const icons = [
+    {
+      src: FaFacebookF,
+    },
+    {
+      src: FaTwitter,
+    },
+    {
+      src: FaLinkedinIn,
+    },
+  ];
   return (
     <footer className="page-footer">
       <div className="footer">
@@ -33,57 +67,25 @@ export default function Footer() {
                   </li>
                 </ul>
               </li>
-              <li className="footer-top-item col-3">
-                <h4 className="section-title">Useful Links</h4>
-                <ul className="footer-list">
-                  <li className="footer-item">
-                    <a href="/#">Terms & Conditions</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">About Company</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Payment Gatway</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Policy</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="footer-top-item col-3">
-                <h4 className="section-title">Our Services</h4>
-                <ul className="footer-list">
-                  <li className="footer-item">
-                    <a href="/#">Data Security</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">IT Managment</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Outsourcing</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Networking</a>
-                  </li>
-                </ul>
-              </li>
-              <li className="footer-top-item col-3">
-                <h4 className="section-title">Support</h4>
-                <ul className="footer-list">
-                  <li className="footer-item">
-                    <a href="/#">Documentation</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Support</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">FAQS</a>
-                  </li>
-                  <li className="footer-item">
-                    <a href="/#">Download</a>
-                  </li>
-                </ul>
-              </li>
+              {items.map((item) => (
+                <li className="footer-top-item col-3">
+                  <h4 className="section-title">{item.title}</h4>
+                  <ul className="footer-list">
+                    <li className="footer-item">
+                      <a href="/#">{item.item1}</a>
+                    </li>
+                    <li className="footer-item">
+                      <a href="/#">{item.item2}</a>
+                    </li>
+                    <li className="footer-item">
+                      <a href="/#">{item.item3}</a>
+                    </li>
+                    <li className="footer-item">
+                      <a href="/#">{item.item4}</a>
+                    </li>
+                  </ul>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -94,15 +96,11 @@ export default function Footer() {
                 <p>© Copyrights 2022 Techmax All rights reserved.</p>
               </div>
               <div className="footer-list-right flex">
-                <a href="/#" className="footer-img mr-10">
-                  <FaFacebookF className="icon" />
-                </a>
-                <a href="/#" className="footer-img mr-10">
-                  <FaTwitter className="icon" />
-                </a>
-                <a href="/#" className="footer-img mr-10">
-                  <FaLinkedinIn className="icon" />
-                </a>
+                {icons.map((icon) => (
+                  <a href="/#" className="footer-img mr-10">
+                    <icon.src className="icon" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>

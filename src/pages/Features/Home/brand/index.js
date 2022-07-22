@@ -8,6 +8,26 @@ function Brand() {
     slidesToScroll: 1,
     arrows: false,
   };
+  const brands = [
+    {
+      src: IMAGES.brand1,
+    },
+    {
+      src: IMAGES.brand2,
+    },
+    {
+      src: IMAGES.brand3,
+    },
+    {
+      src: IMAGES.brand4,
+    },
+    {
+      src: IMAGES.brand5,
+    },
+    {
+      src: IMAGES.brand2,
+    },
+  ];
   return (
     <section className="section-brand section-padding">
       <div className="container">
@@ -19,27 +39,11 @@ function Brand() {
           </h3>
           <div className="brand-img">
             <Slider className="img-slider brand-list flex" {...settings_brand}>
-              <div className="brand-item">
-                <img className="brand-item" src={IMAGES.brand1} alt="brand" />
-              </div>
-              <div className="brand-item">
-                <img src={IMAGES.brand2} alt="brand" />
-              </div>{" "}
-              <div>
-                <img src={IMAGES.brand3} alt="brand" />
-              </div>{" "}
-              <div>
-                <img src={IMAGES.brand4} alt="brand" />
-              </div>{" "}
-              <div>
-                <img src={IMAGES.brand5} alt="brand" />
-              </div>
-              <div>
-                <img src={IMAGES.brand1} alt="brand" />
-              </div>
-              <div>
-                <img src={IMAGES.brand2} alt="brand" />
-              </div>
+              {brands.map((brand) => (
+                <div className="brand-item">
+                  <img className="brand-item" src={brand.src} alt="brand" />
+                </div>
+              ))}
             </Slider>
           </div>
         </div>

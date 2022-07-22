@@ -230,6 +230,7 @@
       flex-wrap: wrap;
     }
     &-item {
+      // @include pxRem(padding-right, 0);
       @include pxRem(padding, 0 12);
       &-box {
         @include pxRem(padding, 40);
@@ -272,6 +273,9 @@
           position: relative;
         }
       }
+    }
+    &-item:nth-child(3n) {
+      padding-right: 0;
     }
   }
   .service-button {
